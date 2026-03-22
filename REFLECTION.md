@@ -1,0 +1,13 @@
+# REFLECTION.md — Smart Library Management System
+
+---
+
+## Reflection: Challenges Faced in Balancing Stakeholder Needs
+
+---
+
+When I started identifying the stakeholders for this system I quickly realised that the same feature can mean very different things depending on who you are asking. What one person sees as essential, another might see as unnecessary complexity. The clearest example of this was the tension between what Members want and what IT Support Staff need. Members naturally want as many features as possible like notifications, real-time updates, and reservation tracking. But the more features you add, the harder the system becomes to maintain and deploy, which is exactly what IT staff are trying to avoid. I decided to leave automated email notifications out of scope entirely. It felt like a big feature to cut at first, but keeping it would have added significant complexity for something that is not critical to the core experience.
+
+Balancing regular Members against Academic Staff was also tricky. Lecturers and researchers often need books for longer and would probably prefer some kind of priority in the reservation queue. But giving them priority feels unfair to regular members who reserved a book first. I decided to keep reservations first-come-first-served because it is simple and fair, even if it is not ideal for academic staff. The Library Manager presented a different kind of challenge. They want data and reports to help them make decisions, which makes sense. But honestly I think a full analytics dashboard with charts and historical trends goes beyond what is necessary for the core system at this stage, so I plan to include a basic summary page that shows the key numbers, which should be enough to meet that need without expanding the scope too far.
+
+Security versus usability was something I also thought about throughout the whole process. JWT and BCrypt are non-negotiable for a system that handles personal data, but they do add complexity. My plan is to include both while keeping the login and registration experience as straightforward as possible so it does not feel like a barrier to new users. Overall, balancing stakeholder needs made me think more carefully about who I am actually building this for. Before doing the stakeholder analysis I was mostly thinking about the system from a technical perspective, but going through each stakeholder one by one made me realise that the real challenge is not writing the code, it is making sure the right people get what they need from it. There is no solution that satisfies everyone completely, so I had to make deliberate choices about where to draw the line. I am fairly confident though that the decisions I made strike a reasonable balance.
