@@ -1,0 +1,33 @@
+# REFLECTION.md — Smart Library Management System
+
+---
+
+## Reflection: Challenges Faced in Balancing Stakeholder Needs
+
+---
+
+When I started identifying the stakeholders for this system I quickly realised that the same feature can mean very different things depending on who you are asking. What one person sees as essential, another might see as unnecessary complexity. The clearest example of this was the tension between what Members want and what IT Support Staff need. Members naturally want as many features as possible like notifications, real-time updates, and reservation tracking. But the more features you add, the harder the system becomes to maintain and deploy, which is exactly what IT staff are trying to avoid. I decided to leave automated email notifications out of scope entirely. It felt like a big feature to cut at first, but keeping it would have added significant complexity for something that is not critical to the core experience.
+
+Balancing regular Members against Academic Staff was also tricky. Lecturers and researchers often need books for longer and would probably prefer some kind of priority in the reservation queue. But giving them priority feels unfair to regular members who reserved a book first. I decided to keep reservations first-come-first-served because it is simple and fair, even if it is not ideal for academic staff. The Library Manager presented a different kind of challenge. They want data and reports to help them make decisions, which makes sense. But honestly I think a full analytics dashboard with charts and historical trends goes beyond what is necessary for the core system at this stage, so I plan to include a basic summary page that shows the key numbers, which should be enough to meet that need without expanding the scope too far.
+
+Security versus usability was something I also thought about throughout the whole process. JWT and BCrypt are non-negotiable for a system that handles personal data, but they do add complexity. My plan is to include both while keeping the login and registration experience as straightforward as possible so it does not feel like a barrier to new users. Overall, balancing stakeholder needs made me think more carefully about who I am actually building this for. Before doing the stakeholder analysis I was mostly thinking about the system from a technical perspective, but going through each stakeholder one by one made me realise that the real challenge is not writing the code, it is making sure the right people get what they need from it. There is no solution that satisfies everyone completely, so I had to make deliberate choices about where to draw the line. I am fairly confident though that the decisions I made strike a reasonable balance.
+
+---
+
+## Reflection: Challenges in Translating Requirements to Use Cases and Test Cases
+
+---
+
+Going into this assignment, I assumed translating requirements into use cases would be simple because I had everything documented from Assignment 4. What I didn't anticipate was how much thought was required to go from a list of requirements to something that actually describes how a real person would interact with the system step by step.
+
+The first challenge I ran into was figuring out how many actors to include in the use case diagram. In Assignment 4 I identified seven stakeholders, but not all of them interact with the system in meaningfully different ways. Academic Staff, for example, use the system in almost exactly the same way as a regular Library Member. I had to decide whether to treat them as a separate actor or simply note that they share the same use cases. In the end I kept them as a separate actor because their context is different even if their interactions are not, and it felt important to show that the system serves both groups.
+
+Another challenge was drawing the line between what counts as a use case and what is just a step inside a use case. For example, checking book availability could be its own use case or it could just be part of reserving a book or issuing a loan. I decided to model it as a separate use case with an include relationship because it is something the system does in multiple places and it honestly made the diagram easier to read and understand.
+
+Writing the alternative flows for each use case specification was definitely harder than I expected. It is easy to write down the happy path where everything goes right, but thinking through all the ways something could go wrong requires a different kind of thinking. I had to ask myself for each step what happens if the data is missing, what happens if the user does not have permission, and what happens if the record does not exist. This made me realise that a lot of the robustness of a system comes not from the main flow but from how well it handles the edge cases.
+
+The test cases presented their own challenges. Writing functional test cases was manageable because I could trace each one directly back to a functional requirement in the previous assignment. The harder part was writing the non-functional test cases, particularly the performance test. It is one thing to say the system should return results within 3 seconds, but defining exactly how to test that in a meaningful way requires thinking about the environment, the load, and the tools needed to simulate real usage. I plan to use Postman for the security tests and a load testing tool for the performance tests once the system is deployed, but at this stage those tests obviously can't be fully executed yet.
+
+One thing I found genuinely useful about translating requirements to use cases and doing the test cases, was that it forced me to think about the system from the user's perspective rather than the developer's perspective. When writing requirements it is easy to stay abstract, but writing a use case specification requires you to imagine a real person sitting in front of the screen and walking through every click and response. That shift in perspective helped me spot a few gaps in my requirements that I had not noticed before, such as what happens when a member tries to reserve a book they have already reserved, which I ended up adding as an alternative flow.
+
+What surprised me most about this phase in the assignment was how much it changed the way I think about the system. I came in thinking I already had a solid understanding of what I was building, but working through the use cases and test cases made me realise there were details I had not fully thought through. Going into the development phase I honestly feel more prepared than I expected to be at this point.
