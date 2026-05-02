@@ -1,0 +1,35 @@
+# USER-STORIES.md — Smart Library Management System
+
+---
+
+## User Stories
+
+The stories below came directly from the functional requirements in REQUIREMENTS.md and the use cases in USE-CASE-SPECIFICATIONS.md. When writing these user stories, I followed the INVEST criteria throughout. I made sure each story was as Independent as possible so that work could be started without always waiting on something else to be finished first. They are Negotiable meaning the exact details of how something gets built can change as I learn more during development. Each story is Valuable because it connects back to something a real stakeholder actually needs, which I identified in STAKEHOLDERS.md. They are Estimable because I was able to assign story points to each one in the product backlog, even if those estimates are not perfect. I kept them Small enough that most can realistically be completed within a sprint, and every story is Testable because each one has acceptance criteria that make it clear when the story is actually done.
+
+---
+
+## Functional User Stories
+
+| Story ID | User Story                                                                                                                                       | Acceptance Criteria                                                                                                                                          | Priority | Linked Requirement |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- | ------------------ |
+| US-001   | As a new member, I want to register an account so that I can access the library system                                                           | Registration completes in under 2 minutes; duplicate emails are rejected with a clear message                                                                | High     | FR-01              |
+| US-002   | As a library member, I want to log in with my email and password so that I can access my account and library features                            | Login succeeds with valid credentials; incorrect credentials return a generic error message; user is redirected to the correct dashboard based on their role | High     | FR-02              |
+| US-003   | As a library member, I want to search for books by title, author, or genre so that I can find what I need without browsing the entire catalogue  | Search results appear within 3 seconds and include availability status; a clear message is shown when no results are found                                   | High     | FR-03              |
+| US-004   | As a librarian, I want to add, edit, and delete books from the catalogue so that the catalogue stays accurate and up to date                     | New books appear immediately in search results; edited details are reflected instantly; books with active loans cannot be deleted                            | High     | FR-04              |
+| US-005   | As a librarian, I want to issue a book loan to a member so that borrowing is recorded and tracked by the system                                  | Available copy count reduces by one; due date is set to 14 days from issue date; loan appears in the member's borrowing history immediately                  | High     | FR-05              |
+| US-006   | As a librarian, I want to process a book return so that availability is updated and any overdue fines are calculated automatically               | Available copy count increases by one; overdue fine is calculated at R2.00 per day if returned late; loan is marked as returned                              | High     | FR-06              |
+| US-007   | As a library member, I want to reserve a book that is currently on loan so that I can secure my place in the queue                               | Reservation is only allowed when no copies are available; member cannot reserve the same book twice; queue position is shown after reserving                 | Medium   | FR-07              |
+| US-008   | As a library member, I want to view my borrowing history so that I can keep track of books I have borrowed in the past                           | History displays book title, issue date, due date, return date, and loan status; most recent loans appear at the top                                         | Medium   | FR-08              |
+| US-009   | As a library member, I want to see my outstanding fine balance on my profile so that I am never caught off guard when trying to borrow a book    | Fine updates daily based on overdue days; balance is always visible on the profile page; librarian can mark fine as paid                                     | Medium   | FR-09              |
+| US-010   | As a library manager, I want to view an admin summary page so that I can quickly see how the library is performing without asking staff          | Summary shows total members, books, active loans, and overdue loans in real time; page is accessible to librarians and admins only                           | Medium   | FR-10              |
+| US-011   | As a system administrator, I want to manage user accounts so that I can control who has access to the system and at what level                   | Deactivated accounts cannot log in; changes take effect immediately without a system restart                                                                 | Low      | FR-11              |
+| US-012   | As a library member, I want to view my active reservations and my position in the queue so that I know when to expect a book to become available | Reservations page shows book title, date reserved, and queue position; fulfilled reservations are clearly marked                                             | Low      | FR-12              |
+
+---
+
+## Non-Functional User Stories
+
+| Story ID | User Story                                                                                                                      | Acceptance Criteria                                                                               | Priority | Linked Requirement |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | -------- | ------------------ |
+| US-013   | As a library member, I want the system to be easy to use without any training so that I can get started on my own               | A first-time user can register and complete a book search within 5 minutes                        | High     | NFR-01             |
+| US-014   | As a system administrator, I want all passwords to be stored securely so that member data is protected in the event of a breach | Database inspection shows only BCrypt hashed values; no plain text passwords are stored or logged | High     | NFR-08             |
