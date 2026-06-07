@@ -1,4 +1,4 @@
-# MERGED_PRS.md — Assignment 15: Merged Pull Requests
+# MERGED_PRS.md — Merged Pull Requests
 
 ---
 
