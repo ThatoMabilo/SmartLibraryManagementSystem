@@ -113,3 +113,19 @@ The peer engagement side of this assignment taught me something I did not expect
 One of the challenges I anticipate in onboarding contributors is the circular reference issue between Loan and Member that is already logged as a known bug. A new contributor picking up that issue would need to understand how Jackson serialises objects and how Spring Boot handles JSON responses, which is not trivial. That kind of issue sits in an awkward middle ground between a good-first-issue and something that requires real experience with the framework.
 
 Nonetheless, the biggest lesson I learned from this assignment is that open-source collaboration is not just a technical skill, it's a communication skill. Writing good documentation, labelling issues clearly, and maintaining a roadmap are all forms of communication with people I may never meet. It sounds obvious in hindsight but it genuinely did not click for me until I had to prepare my own repo for someone else to use.
+
+---
+
+## Reflection: Cross-Project Contributions
+
+---
+
+Contributing to peers repositories felt very different from working on my own project. On my own repo I know exactly where everything is and what the conventions are. On someone else's repo you have to spend time just understanding the structure before you can even touch anything.
+
+The biggest lesson was how important a good CONTRIBUTING.md and clear issues are. The repos that had detailed issues with acceptance criteria (like Vanessa's) were much easier to contribute to because I knew exactly what was expected. Repos with vague issues made it harder to know if my contribution was actually solving the right problem.
+
+The main challenge was getting PRs merged on time. Some classmates were not reachable and had not checked their GitHub notifications. This taught me that in real open-source projects, repo owners can take days or weeks to review a PR, and you have to plan for that. Submitting to multiple projects was the right call because it meant I still had merged PRs even when some owners were unavailable. Another challenge was working across different tech stacks. My own project is Java/Spring Boot, but some peers used Python/FastAPI. Switching between them required quickly reading unfamiliar code and understanding conventions I had not used before.
+
+What I'd do differently is to start earlier and comment on issues sooner. Commenting on an issue before writing any code is not just etiquette — it's protection against doing work that someone else is already doing or that the owner does not actually want. I learned this the hard way by having to switch issues mid-way through. I would also install Maven and set up a proper Java environment before starting, rather than discovering mid-contribution that tools were missing.
+
+This assignment actually made the open-source contribution workflow feel so real. The cycle of finding an issue, commenting, forking, branching, coding, and submitting a PR with a proper description is exactly what contributing to projects like Spring Boot or FastAPI looks like. The fact that actual classmates had to review and merge my work honestly made it feel meaningful rather than just an exercise.
