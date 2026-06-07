@@ -19,6 +19,18 @@ public class Reservation {
         this.queuePosition = queuePosition;
     }
 
+    public Reservation() {
+        
+    }
+
+    public Reservation(String r001, Book book, Member member, LocalDate now) {
+        this.reservationId = reservationId;
+        this.member = member;
+        this.book = book;
+        this.reservationDate = LocalDate.now();
+    }
+
+
     public void placeReservation() {
         if (!book.checkAvailability()) {
             member.addReservation(this);
@@ -57,4 +69,15 @@ public class Reservation {
 
     public Book getBook() {
         return book; }
+
+    public LocalDate getReservationDate() {
+        return reservationDate;
+    }
+
+    public void setCancelled(boolean b) {
+    }
+
+    public boolean isCancelled() {
+        return true;
+    }
 }
