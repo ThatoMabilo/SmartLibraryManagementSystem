@@ -1,4 +1,4 @@
-# CONTRIBUTIONS.md — Cross-Project Contributions
+# CONTRIBUTIONS.md — Smart Library Management System
 
 ---
 
