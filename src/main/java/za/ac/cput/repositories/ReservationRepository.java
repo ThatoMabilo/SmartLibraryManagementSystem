@@ -8,8 +8,6 @@ public interface ReservationRepository extends Repository<Reservation, String> {
     List<Reservation> findByMemberId(String memberId);
     List<Reservation> findByBookId(String bookId);
     List<Reservation> findByStatus(String status);
-    
-    // Add these new methods:
     List<Reservation> findActiveReservations();
     List<Reservation> findExpiredReservations(LocalDateTime currentDate);
     boolean isBookReserved(String bookId);
