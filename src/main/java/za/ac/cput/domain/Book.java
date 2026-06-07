@@ -21,10 +21,6 @@ public class Book {
         this.availableCopies = totalCopies;
     }
 
-    public Book() {
-
-    }
-
     public boolean checkAvailability() {
         return availableCopies > 0;
     }

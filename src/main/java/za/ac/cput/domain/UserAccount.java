@@ -14,10 +14,6 @@ public abstract class UserAccount {
         this.role = role;
     }
 
-    public UserAccount() {
-
-    }
-
     public boolean authenticate(String passwordHash) {
         return this.passwordHash.equals(passwordHash);
     }

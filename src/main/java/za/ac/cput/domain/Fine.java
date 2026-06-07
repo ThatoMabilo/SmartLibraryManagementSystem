@@ -17,9 +17,7 @@ public class Fine {
         this.createdDate = LocalDate.now();
         this.status = "OUTSTANDING";
     }
-    public Fine(double amount){
-        
-    }
+
     public double calculateAmount() {
         return loan.calculateFine();
     }
@@ -52,8 +50,4 @@ public class Fine {
 
     public Loan getLoan() {
         return loan; }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
 }

@@ -19,10 +19,6 @@ public class Member extends UserAccount {
         this.reservations = new ArrayList<>();
     }
 
-    public Member() {
-        super();
-    }
-
     public void register() {
         this.accountStatus = "ACTIVE";
         System.out.println("Member registered: " + fullName);
