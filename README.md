@@ -223,4 +223,4 @@ The project board uses the Automated Kanban template with two additional columns
 Student: Thato Anikie Mabilo
 Student number: 222148349
 Lecturer: Dr. Boniface Kabaso
-Assignment 14: Smart Library Management System
+Assignment 15: Smart Library Management System
