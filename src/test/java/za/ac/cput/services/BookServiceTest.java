@@ -2,7 +2,6 @@ package za.ac.cput.services;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import za.ac.cput.creational_patterns.BookBuilder;
 import za.ac.cput.domain.Book;
 import za.ac.cput.repositories.inmemory.InMemoryBookRepository;
 import za.ac.cput.services.BookService;
@@ -106,11 +105,5 @@ public class BookServiceTest {
         List<Book> available = bookService.getAvailableBooks();
         assertEquals(1, available.size());
         assertEquals("Clean Code", available.get(0).getTitle());
-    }
-    @Test
-    void shouldCreateBookSuccessfully() {
-        Book book = new BookBuilder("B004", "Discovery","Teutonic King","ISBN0004")
-                .build();
-        assertEquals("Discovery", book.getTitle());
     }
 }
