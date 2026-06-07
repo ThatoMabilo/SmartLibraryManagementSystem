@@ -1,5 +1,4 @@
-# MERGED_PRS.md — Merged Pull Requests
-
+# MERGED_PRS.md — Smart Library Management System
 ---
 
 ## PR 1 — ElectoView
