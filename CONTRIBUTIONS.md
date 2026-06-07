@@ -1,4 +1,4 @@
-# CONTRIBUTIONS.md — Assignment 15: Cross-Project Contributions
+# CONTRIBUTIONS.md — Cross-Project Contributions
 
 ---
 
