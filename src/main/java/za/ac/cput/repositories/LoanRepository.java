@@ -8,4 +8,8 @@ public interface LoanRepository extends Repository<Loan, String> {
     List<Loan> findByBookId(String bookId);
     List<Loan> findOverdue();
     List<Loan> findByStatus(String status);
+    
+    // Add these new methods:
+    List<Loan> findActiveLoans();
+    boolean isBookLoaned(String bookId);
 }
