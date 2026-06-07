@@ -1,5 +1,4 @@
-# CONTRIBUTION_PLAN.md — Cross-Project Contributions
-
+# CONTRIBUTION_PLAN.md — Smart Library Management System
 ---
 
 ## Overview
