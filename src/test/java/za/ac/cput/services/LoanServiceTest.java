@@ -12,6 +12,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Test;
+
+import java.time.LocalDate;
+
+import static org.junit.jupiter.api.Assertions.*;
 public class LoanServiceTest {
 
     private LoanService loanService;
@@ -116,5 +121,43 @@ public class LoanServiceTest {
         loanService.issueLoan("M001", "B001");
         List<Loan> loans = loanService.getLoansByMember("M001");
         assertEquals(1, loans.size());
+    }
+    @Test
+    void shouldCreateLoanSuccessfully() {
+
+        Book book = new Book("book0006","Discovery","Teutonic king","ISBN0004","Romance",2026,2000);
+        Member member = new Member("M002","Rodrigue Ndzana","ndzanarodrigue6@gmail.com","Teuonid");
+
+        Loan loan = new Loan(
+                "L001",
+                book,
+                member,
+                LocalDate.now(),
+                LocalDate.now().plusDays(14)
+        );
+
+        assertNotNull(loan);
+        assertEquals(book, loan.getBook());
+        assertEquals(member, loan.getMember());
+    }
+
+    @Test
+    void dueDateShouldBeAfterLoanDate() {
+
+        Loan loan = new Loan();
+
+        assertTrue(
+                loan.getDueDate().isAfter(loan.getReturnDate())
+        );
+    }
+
+    @Test
+    void shouldMarkLoanReturned() {
+
+        Loan loan = new Loan();
+
+        loan.setReturned(true);
+
+        assertTrue(loan.isReturned());
     }
 }

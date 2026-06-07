@@ -1,6 +1,7 @@
 package za.ac.cput.domain;
 
 import java.time.LocalDate;
+import java.time.chrono.ChronoLocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class Loan {
@@ -21,6 +22,13 @@ public class Loan {
         this.dueDate = issueDate.plusDays(14);
         this.status = "ACTIVE";
         this.fineAmount = 0.0;
+    }
+
+    public Loan(String l001, Book book, Member member, LocalDate now, LocalDate localDate) {
+    }
+
+    public Loan() {
+
     }
 
     public void issueLoan() {
@@ -80,4 +88,14 @@ public class Loan {
 
     public Book getBook() {
         return book; }
+
+    public void setReturned(boolean b) {
+    }
+
+    public boolean isReturned() {
+        return true;
+    }
+
+
+
 }
